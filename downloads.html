@@ -226,3 +226,104 @@
                 </tr>
                 <tr>
                     <td>MintForge_Manual.pdf</td>
+                    <td>2.1</td>
+                    <td>1.2 MB</td>
+                    <td>Complete user documentation</td>
+                    <td><a href="#" onclick="downloadManual()">Download</a></td>
+                </tr>
+                <tr>
+                    <td>Mining_Tools_Pack.zip</td>
+                    <td>1.3</td>
+                    <td>4.7 MB</td>
+                    <td>CPU/GPU mining software</td>
+                    <td><a href="#" onclick="downloadMining()">Download</a></td>
+                </tr>
+            </table>
+            
+            <div class="version-info">
+                <strong>What's New in v2.1:</strong><br>
+                - Added Scrypt algorithm support for Litecoin-style currencies<br>
+                - Enhanced genesis block customization with timestamp editor<br>
+                - New client branding options including splash screens<br>
+                - Improved Windows 7 compatibility and UAC support<br>
+                - Bug fixes for rare blockchain corruption issues<br>
+                - Updated to Bitcoin core v0.4.0 codebase<br>
+                - Added RPC command customization panel<br>
+                - Performance improvements for large blockchain generation
+            </div>
+            
+            <div class="version-info">
+                <strong>Previous Versions:</strong><br>
+                <a href="#" onclick="downloadOld()">MintForge v2.0.1134</a> (October 15, 2011) - 11.8 MB<br>
+                <a href="#" onclick="downloadOld()">MintForge v1.9.1087</a> (September 8, 2011) - 10.2 MB<br>
+                <a href="#" onclick="downloadOld()">MintForge v1.8.1021</a> (August 12, 2011) - 9.7 MB
+            </div>
+            
+            <h3 style="color: #000080;">Installation Instructions</h3>
+            <ol>
+                <li>Download the MintForge installer to your desktop</li>
+                <li>Right-click the installer and select "Run as Administrator"</li>
+                <li>Follow the setup wizard prompts</li>
+                <li>Enter your license key when prompted (trial users can skip this step)</li>
+                <li>Allow Windows Firewall exceptions for network connectivity</li>
+                <li>Restart your computer after installation completes</li>
+            </ol>
+            
+            <div class="requirements-box">
+                <strong>License Information:</strong><br>
+                Full version requires Bitcoin payment of 1.50000000 BTC<br>
+                Send payment to: <strong>1MintForgePayment123456789ABCDEFGHijk</strong><br>
+                License key will be emailed within 6 confirmations<br>
+                Trial version has full functionality for 30 days
+            </div>
+            
+            <h3 style="color: #000080;">Download Mirrors</h3>
+            <p style="font-size: 10px;">
+                Primary: <a href="#">download.mintforge.org</a> (USA)<br>
+                Mirror 1: <a href="#">eu.mintforge.org</a> (Europe)<br>
+                Mirror 2: <a href="#">asia.mintforge.org</a> (Asia)<br>
+                FTP: <a href="#">ftp://files.mintforge.org/releases/</a><br>
+                Torrent: <a href="#">MintForge_v2.1.torrent</a> (BitTorrent)
+            </p>
+            
+            <p style="text-align: center; margin: 20px 0; font-size: 10px;">
+                <em>Having download problems? Try our <a href="contact.html">technical support</a> or visit the <a href="forum.html">community forum</a></em>
+            </p>
+        </div>
+        
+        <div class="footer">
+            MintForge v2.1.1147 - Copyright &copy; 2011 Digital Currency Solutions<br />
+            Best viewed in Internet Explorer 8+ or Firefox 3.6+<br />
+            <a href="mailto:webmaster@mintforge.org">webmaster@mintforge.org</a> | 
+            Hosted by <a href="#">GeoCities Business</a><br />
+            <em>Total downloads: 8,429 since launch</em>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function downloadFull() {
+            alert("MintForge Professional Download\n\nLicense verification required!\n\nPlease ensure you have sent 1.50000000 BTC to:\n1MintForgePayment123456789ABCDEFGHijk\n\nDownload will begin after payment confirmation.\n\nCurrent confirmations: 0\n\nCheck your email for license key delivery.");
+        }
+        
+        function downloadTrial() {
+            alert("MintForge Trial Download\n\nStarting download...\n\nFile: MintForge_Trial_v2.1.exe\nSize: 12.4 MB\nEstimated time: 8 minutes (56k modem)\n\nSave location: C:\\Downloads\\MintForge_Trial_v2.1.exe\n\nTrial includes full functionality for 30 days.\nNo payment required for trial version.");
+        }
+        
+        function downloadSample() {
+            alert("Sample Package Download\n\nSampleCoin.zip contains:\n- Complete SampleCoin source code\n- Windows binaries (client + daemon)\n- Mining software (CPU only)\n- README.txt with setup instructions\n- Sample blockchain data\n\nDownload starting...\nEstimated time: 2 minutes");
+        }
+        
+        function downloadManual() {
+            alert("User Manual Download\n\nMintForge_Manual.pdf (1.2 MB)\n\nIncludes:\n- Complete installation guide\n- Step-by-step tutorials\n- Troubleshooting section\n- API reference\n- FAQ\n\nRequires Adobe Acrobat Reader 8.0+");
+        }
+        
+        function downloadMining() {
+            alert("Mining Tools Package\n\nMining_Tools_Pack.zip contains:\n- CPU miner for Windows\n- GPU miner (CUDA/OpenCL)\n- Pool mining software\n- Solo mining guide\n- Performance optimization tips\n\nRequires DirectX 9.0c for GPU mining");
+        }
+        
+        function downloadOld() {
+            alert("Legacy Version Download\n\nOlder versions available for compatibility.\n\nNote: Legacy versions may have security issues.\nUpgrade to v2.1 recommended.\n\nDownload will begin automatically...");
+        }
+    </script>
+</body>
+</html>
