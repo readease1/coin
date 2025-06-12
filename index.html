@@ -1,267 +1,381 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>CoinForge 2011 - Digital Currency Creation System</title>
-    <style>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>CoinForge - Create Your Own Digital Currency!</title>
+    <style type="text/css">
         body {
-            font-family: "MS Sans Serif", sans-serif;
-            background: #c0c0c0;
-            margin: 0;
-            padding: 20px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
             font-size: 11px;
+            background: #2c5aa0 url('data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==') repeat;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background: linear-gradient(to bottom, #4169e1, #1e3a8a);
+            height: 80px;
+            border-bottom: 3px solid #ffd700;
+        }
+        
+        .header h1 {
+            color: #ffffff;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000000;
+            margin: 0;
+            padding: 20px 0 5px 0;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .header .tagline {
+            color: #ffd700;
+            text-align: center;
+            font-size: 12px;
+            font-style: italic;
+            margin: 0;
         }
         
         .container {
-            background: #c0c0c0;
-            border: 2px outset #c0c0c0;
-            padding: 15px;
+            width: 800px;
             margin: 0 auto;
-            width: 580px;
+            background: #ffffff;
+            border: 2px solid #808080;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
         
-        h1 {
-            color: #000080;
-            text-align: center;
-            font-size: 16px;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        
-        .subtitle {
-            text-align: center;
-            color: #800000;
-            margin-bottom: 15px;
+        .nav {
+            background: #e0e0e0;
+            border-bottom: 1px solid #808080;
+            padding: 5px;
             font-size: 10px;
         }
         
-        .form-section {
-            background: #e0e0e0;
-            border: 1px inset #c0c0c0;
-            padding: 8px;
-            margin: 8px 0;
+        .nav a {
+            color: #0000ff;
+            text-decoration: underline;
+            margin-right: 15px;
         }
         
-        .form-section h3 {
-            color: #000080;
-            margin: 0 0 8px 0;
+        .nav a:visited {
+            color: #800080;
+        }
+        
+        .content {
+            padding: 15px;
+            background: #ffffff;
+        }
+        
+        .welcome-box {
+            background: #ffffcc;
+            border: 2px dashed #ff6600;
+            padding: 10px;
+            margin-bottom: 15px;
             font-size: 12px;
         }
         
-        input[type="text"], textarea, select {
-            background: white;
-            border: 1px inset #c0c0c0;
-            padding: 1px 3px;
-            font-family: "MS Sans Serif", sans-serif;
-            font-size: 11px;
+        .form-table {
+            background: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 10px;
+            margin: 10px 0;
         }
         
-        button {
-            background: #c0c0c0;
-            border: 2px outset #c0c0c0;
-            padding: 4px 12px;
-            font-family: "MS Sans Serif", sans-serif;
+        .form-table h3 {
+            background: #cccccc;
+            margin: -10px -10px 10px -10px;
+            padding: 5px 10px;
+            font-size: 12px;
+            color: #333333;
+            border-bottom: 1px solid #999999;
+        }
+        
+        input[type="text"], textarea, select {
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 11px;
+            border: 1px solid #999999;
+            padding: 2px;
+            background: #ffffff;
+        }
+        
+        .button {
+            background: linear-gradient(to bottom, #f0f0f0, #d0d0d0);
+            border: 1px solid #999999;
+            padding: 6px 12px;
+            font-family: Verdana, Arial, sans-serif;
             font-size: 11px;
             cursor: pointer;
+            color: #000000;
         }
         
-        button:active {
-            border: 2px inset #c0c0c0;
+        .button:hover {
+            background: linear-gradient(to bottom, #e0e0e0, #c0c0c0);
         }
         
-        .warning {
-            background: #ffff80;
-            border: 1px solid #808080;
-            padding: 6px;
+        .warning-box {
+            background: #fff0f0;
+            border: 2px solid #ff0000;
+            padding: 8px;
+            margin: 10px 0;
+            color: #cc0000;
+            font-weight: bold;
             font-size: 10px;
-            text-align: center;
-            margin: 8px 0;
+        }
+        
+        .info-box {
+            background: #f0f8ff;
+            border: 1px solid #4169e1;
+            padding: 8px;
+            margin: 10px 0;
+            font-size: 10px;
         }
         
         .footer {
+            background: #e0e0e0;
+            border-top: 1px solid #808080;
+            padding: 10px;
             text-align: center;
             font-size: 9px;
-            color: #404040;
-            margin-top: 15px;
-            border-top: 1px solid #808080;
-            padding-top: 8px;
+            color: #666666;
         }
         
-        .requirements {
-            font-size: 9px;
+        .counter {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .new-gif {
+            background: #ff0000;
+            color: #ffffff;
+            font-size: 8px;
+            font-weight: bold;
+            padding: 1px 3px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .link-section {
             background: #f0f0f0;
-            border: 1px solid #808080;
-            padding: 6px;
-            margin: 8px 0;
+            border: 1px dotted #999999;
+            padding: 8px;
+            margin: 10px 0;
+            font-size: 10px;
+        }
+        
+        .link-section a {
+            color: #0000ff;
+            text-decoration: underline;
         }
         
         table {
             width: 100%;
+            border-collapse: collapse;
         }
         
         td {
-            padding: 2px;
-            font-size: 11px;
+            padding: 3px;
+            vertical-align: top;
         }
         
-        .status-bar {
-            background: #c0c0c0;
-            border: 1px inset #c0c0c0;
-            padding: 2px 4px;
-            font-size: 9px;
-            margin-top: 10px;
-            font-family: "MS Sans Serif", sans-serif;
+        .status-text {
+            font-family: "Courier New", monospace;
+            font-size: 10px;
+            background: #000000;
+            color: #00ff00;
+            padding: 5px;
+            margin: 10px 0;
         }
         
-        .header-bar {
-            background: linear-gradient(to right, #0080c0, #4080ff);
-            color: white;
-            padding: 3px 8px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-bottom: 10px;
+        hr {
+            color: #cccccc;
+            background: #cccccc;
+            height: 1px;
+            border: 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header-bar">CoinForge Professional v2.1 Build 1147</div>
-        
+    <div class="header">
         <h1>CoinForge Digital Currency Creator</h1>
-        <div class="subtitle">Advanced Cryptocurrency Generation System</div>
-        
-        <div class="warning">
-            WARNING: This software requires .NET Framework 2.0 and Windows Installer 3.1
+        <p class="tagline">The Ultimate Solution for Custom Cryptocurrency Development</p>
+    </div>
+    
+    <div class="container">
+        <div class="nav">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#download">Download</a>
+            <a href="#tutorials">Tutorials</a>
+            <a href="#forum">Forum</a>
+            <a href="#contact">Contact</a>
+            <span style="float: right;">Visitors: <span class="counter">047,291</span></span>
         </div>
         
-        <div class="form-section">
-            <h3>Basic Currency Properties</h3>
-            <table>
-                <tr>
-                    <td width="120">Currency Name:</td>
-                    <td><input type="text" placeholder="MyNewCoin" style="width: 180px;"></td>
-                </tr>
-                <tr>
-                    <td>Ticker Symbol:</td>
-                    <td><input type="text" placeholder="MNC" maxlength="5" style="width: 80px;"></td>
-                </tr>
-                <tr>
-                    <td>Maximum Supply:</td>
-                    <td><input type="text" placeholder="21000000" style="width: 120px;"> units</td>
-                </tr>
-                <tr>
-                    <td>Hash Algorithm:</td>
-                    <td>
-                        <select style="width: 160px;">
-                            <option selected>SHA-256 (Bitcoin Compatible)</option>
-                            <option>Scrypt (Litecoin Compatible)</option>
-                            <option>X11 (Experimental)</option>
-                            <option>Custom Algorithm</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="form-section">
-            <h3>Network Parameters</h3>
-            <table>
-                <tr>
-                    <td width="120">Block Reward:</td>
-                    <td><input type="text" value="50.00000000" style="width: 100px;"> coins</td>
-                </tr>
-                <tr>
-                    <td>Target Block Time:</td>
-                    <td><input type="text" value="600" style="width: 60px;"> seconds</td>
-                </tr>
-                <tr>
-                    <td>Difficulty Retarget:</td>
-                    <td><input type="text" value="2016" style="width: 60px;"> blocks</td>
-                </tr>
-                <tr>
-                    <td>RPC Port:</td>
-                    <td><input type="text" value="8332" style="width: 60px;"></td>
-                </tr>
-                <tr>
-                    <td>P2P Port:</td>
-                    <td><input type="text" value="8333" style="width: 60px;"></td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="form-section">
-            <h3>Genesis Block Configuration</h3>
-            <table>
-                <tr>
-                    <td width="120">Genesis Text:</td>
-                    <td><input type="text" value="The Times 03/Jan/2009 Chancellor on brink" style="width: 300px;"></td>
-                </tr>
-                <tr>
-                    <td>Genesis Reward:</td>
-                    <td><input type="text" value="50.00000000" style="width: 100px;"> coins</td>
-                </tr>
-                <tr>
-                    <td>Timestamp:</td>
-                    <td><input type="text" value="1231006505" style="width: 100px;"> (Unix epoch)</td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="form-section">
-            <h3>Client Customization</h3>
-            <p>Application Icon: <input type="file" accept=".ico"> (Windows ICO format only)</p>
-            <p>Splash Screen: <input type="file" accept=".bmp"> (640x480 BMP recommended)</p>
-            <p>About Text:</p>
-            <textarea rows="3" cols="65" placeholder="Enter description for your cryptocurrency client..."></textarea>
-        </div>
-        
-        <div class="requirements">
-            <strong>System Requirements:</strong><br>
-            - Microsoft Windows 2000 Professional SP4 or Windows XP SP2<br>
-            - Intel Pentium III 500MHz or AMD Athlon equivalent<br>
-            - 256 MB RAM (512 MB recommended for mining)<br>
-            - 100 MB available hard disk space<br>
-            - TCP/IP network connection<br>
-            - Microsoft Visual C++ 2005 Redistributable Package<br>
-            - DirectX 9.0c or later for hardware acceleration
-        </div>
-        
-        <div class="warning">
-            License Fee: 1.5 BTC (approximately $15.75 USD)<br>
-            Payment Address: 1CoinForgeSystemAddress123456789ABC<br>
-            Allow 6 confirmations before generation begins
-        </div>
-        
-        <center>
-            <button onclick="generateCoin()">Generate Currency Package</button>
-            <button onclick="showHelp()">Help</button>
-            <button onclick="showAbout()">About</button>
-        </center>
-        
-        <div class="status-bar">
-            Ready | Bitcoin Network: 1,247 connections | Last Block: 154,832 | Difficulty: 1,379,647.74
+        <div class="content">
+            <div class="welcome-box">
+                <strong>Welcome to CoinForge!</strong> <span class="new-gif">NEW!</span><br>
+                Create your own Bitcoin-based cryptocurrency in minutes! No programming experience required!<br>
+                <em>Last updated: November 3, 2011 - Added Scrypt algorithm support!</em>
+            </div>
+            
+            <div class="info-box">
+                <strong>ANNOUNCEMENT:</strong> CoinForge v2.1 is now available! New features include enhanced mining support, 
+                custom genesis block creation, and compatibility with the latest Bitcoin client (v0.4.0).
+            </div>
+            
+            <form name="coinform">
+                <div class="form-table">
+                    <h3>Step 1: Basic Currency Information</h3>
+                    <table>
+                        <tr>
+                            <td width="150"><strong>Currency Name:</strong></td>
+                            <td><input type="text" name="coinname" size="25" value="" /></td>
+                            <td><em>Example: MyNewCoin</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ticker Symbol:</strong></td>
+                            <td><input type="text" name="symbol" size="8" maxlength="5" value="" /></td>
+                            <td><em>3-5 characters (MNC, XYZ, etc.)</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Supply:</strong></td>
+                            <td><input type="text" name="supply" size="15" value="21000000" /></td>
+                            <td><em>Maximum coins that will ever exist</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Algorithm:</strong></td>
+                            <td>
+                                <select name="algorithm">
+                                    <option value="sha256" selected>SHA-256 (Bitcoin)</option>
+                                    <option value="scrypt">Scrypt (Litecoin)</option>
+                                    <option value="custom">Custom Algorithm</option>
+                                </select>
+                            </td>
+                            <td><em>Mining hash function</em></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="form-table">
+                    <h3>Step 2: Network Configuration</h3>
+                    <table>
+                        <tr>
+                            <td width="150"><strong>Block Time:</strong></td>
+                            <td><input type="text" name="blocktime" size="10" value="600" /> seconds</td>
+                            <td><em>Time between blocks (Bitcoin = 600)</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Block Reward:</strong></td>
+                            <td><input type="text" name="reward" size="15" value="50.00000000" /></td>
+                            <td><em>Coins awarded per mined block</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Difficulty Adjust:</strong></td>
+                            <td><input type="text" name="difficulty" size="10" value="2016" /> blocks</td>
+                            <td><em>How often difficulty changes</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>RPC Port:</strong></td>
+                            <td><input type="text" name="rpcport" size="10" value="8332" /></td>
+                            <td><em>Remote procedure call port</em></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="form-table">
+                    <h3>Step 3: Genesis Block Settings</h3>
+                    <table>
+                        <tr>
+                            <td width="150"><strong>Genesis Text:</strong></td>
+                            <td><input type="text" name="genesis" size="50" value="The Times 03/Jan/2009 Chancellor on brink of second bailout for banks" /></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Start Date:</strong></td>
+                            <td><input type="text" name="timestamp" size="15" value="1320278400" /></td>
+                            <td><em>Unix timestamp</em></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="form-table">
+                    <h3>Step 4: Customization Options</h3>
+                    <strong>Client Icon:</strong> <input type="file" name="icon" accept=".ico" /><br /><br />
+                    <strong>About Text:</strong><br />
+                    <textarea name="about" rows="4" cols="60">Enter a description for your cryptocurrency...</textarea>
+                </div>
+            </form>
+            
+            <div class="warning-box">
+                <strong>IMPORTANT:</strong> License fee required! Send exactly 1.50000000 BTC to address:<br />
+                <strong>1CoinForgePayment123456789ABCDEFGHijk</strong><br />
+                Allow 6 confirmations before generation. Current BTC price: ~$10.50 USD
+            </div>
+            
+            <center>
+                <input type="button" class="button" value="Generate Currency Package" onclick="generateCoin()" />
+                <input type="button" class="button" value="Download Sample" onclick="downloadSample()" />
+                <input type="button" class="button" value="View Tutorial" onclick="showTutorial()" />
+            </center>
+            
+            <div class="status-text">
+                SYSTEM STATUS: ONLINE<br />
+                BITCOIN NETWORK: 1,847 CONNECTIONS<br />
+                LAST BLOCK: 154,892 (2011-11-03 14:23:17)<br />
+                GENERATION QUEUE: 3 PENDING
+            </div>
+            
+            <hr />
+            
+            <div class="link-section">
+                <strong>Useful Links:</strong><br />
+                <a href="http://bitcoin.org/">Official Bitcoin Website</a> |
+                <a href="http://bitcointalk.org/">BitcoinTalk Forum</a> |
+                <a href="http://blockexplorer.com/">Block Explorer</a> |
+                <a href="http://mtgox.com/">Mt. Gox Exchange</a>
+            </div>
+            
+            <div class="info-box">
+                <strong>System Requirements:</strong><br />
+                - Windows XP SP2 / Vista / 7<br />
+                - Microsoft .NET Framework 3.5<br />
+                - 512 MB RAM minimum<br />
+                - Broadband internet connection<br />
+                - 50 MB disk space
+            </div>
         </div>
         
         <div class="footer">
-            CoinForge Professional Edition v2.1.1147<br>
-            Copyright 2011 Digital Currency Solutions LLC. All rights reserved.<br>
-            Licensed to: Unregistered User (Trial Version - 30 days remaining)<br>
-            For support visit http://coinforge.sourceforge.net or email support@coinforge.org<br>
-            Bitcoin implementation based on Satoshi Client v0.4.0
+            CoinForge v2.1.1147 - Copyright &copy; 2011 Digital Currency Solutions<br />
+            Best viewed in Internet Explorer 8+ or Firefox 3.6+<br />
+            <a href="mailto:webmaster@coinforge.org">webmaster@coinforge.org</a> | 
+            Hosted by <a href="#">GeoCities Business</a><br />
+            <em>This page has been visited 47,291 times since October 2011</em>
         </div>
     </div>
 
-    <script>
+    <script type="text/javascript">
         function generateCoin() {
-            alert("Error: Bitcoin payment not detected.\n\nPlease send exactly 1.50000000 BTC to the license address and wait for 6 network confirmations before attempting generation.\n\nCurrent confirmations: 0\n\nNote: Generation process may take 2-4 hours depending on network conditions.");
+            alert("ERROR: Payment verification failed!\n\nNo Bitcoin payment detected at address:\n1CoinForgePayment123456789ABCDEFGHijk\n\nPlease send exactly 1.50000000 BTC and wait for 6 confirmations.\n\nCurrent confirmations: 0\n\nRefresh this page after payment is sent.");
         }
         
-        function showHelp() {
-            alert("CoinForge Help System\n\nFor detailed documentation, please refer to the included CoinForge_Manual.pdf file in your installation directory.\n\nOnline help available at:\nhttp://coinforge.sourceforge.net/wiki/\n\nFor technical support:\nsupport@coinforge.org");
+        function downloadSample() {
+            alert("Sample Download\n\nSampleCoin.zip (2.4 MB)\n\nThis sample package contains:\n- Complete source code\n- Windows binaries\n- Mining software\n- Setup instructions\n\nDownload will begin automatically...\n\n[Note: Requires WinRAR to extract]");
         }
         
-        function showAbout() {
-            alert("CoinForge Professional v2.1 Build 1147\n\nDigital Currency Creation System\nCopyright 2011 Digital Currency Solutions LLC\n\nThis software uses the following components:\n- OpenSSL 1.0.0d\n- Berkeley DB 4.8.30\n- Boost C++ Libraries 1.47.0\n- wxWidgets 2.9.2\n\nLicensed under the CoinForge Commercial License Agreement.\nPatent US8,765,432 pending.");
+        function showTutorial() {
+            alert("CoinForge Tutorial\n\nStep-by-step guide available at:\nhttp://coinforge.org/tutorial.htm\n\nVideo tutorials:\n- Part 1: Basic Setup (12:34)\n- Part 2: Network Configuration (8:21)\n- Part 3: Client Customization (15:07)\n\nRequires Windows Media Player 9+");
         }
+        
+        // Simulate old website behavior
+        window.onload = function() {
+            document.title = "CoinForge - Create Your Own Digital Currency! [NEW v2.1]";
+        };
     </script>
 </body>
 </html>
