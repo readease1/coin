@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CoinForge 2011 - Digital Currency Creation System</title>
+    <style>
+        body {
+            font-family: "MS Sans Serif", sans-serif;
+            background: #c0c0c0;
+            margin: 0;
+            padding: 20px;
+            font-size: 11px;
+        }
+        
+        .container {
+            background: #c0c0c0;
+            border: 2px outset #c0c0c0;
+            padding: 15px;
+            margin: 0 auto;
+            width: 580px;
+        }
+        
+        h1 {
+            color: #000080;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #800000;
+            margin-bottom: 15px;
+            font-size: 10px;
+        }
+        
+        .form-section {
+            background: #e0e0e0;
+            border: 1px inset #c0c0c0;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        
+        .form-section h3 {
+            color: #000080;
+            margin: 0 0 8px 0;
+            font-size: 12px;
+        }
+        
+        input[type="text"], textarea, select {
+            background: white;
+            border: 1px inset #c0c0c0;
+            padding: 1px 3px;
+            font-family: "MS Sans Serif", sans-serif;
+            font-size: 11px;
+        }
+        
+        button {
+            background: #c0c0c0;
+            border: 2px outset #c0c0c0;
+            padding: 4px 12px;
+            font-family: "MS Sans Serif", sans-serif;
+            font-size: 11px;
+            cursor: pointer;
+        }
+        
+        button:active {
+            border: 2px inset #c0c0c0;
+        }
+        
+        .warning {
+            background: #ffff80;
+            border: 1px solid #808080;
+            padding: 6px;
+            font-size: 10px;
+            text-align: center;
+            margin: 8px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 9px;
+            color: #404040;
+            margin-top: 15px;
+            border-top: 1px solid #808080;
+            padding-top: 8px;
+        }
+        
+        .requirements {
+            font-size: 9px;
+            background: #f0f0f0;
+            border: 1px solid #808080;
+            padding: 6px;
+            margin: 8px 0;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        td {
+            padding: 2px;
+            font-size: 11px;
+        }
+        
+        .status-bar {
+            background: #c0c0c0;
+            border: 1px inset #c0c0c0;
+            padding: 2px 4px;
+            font-size: 9px;
+            margin-top: 10px;
+            font-family: "MS Sans Serif", sans-serif;
+        }
+        
+        .header-bar {
+            background: linear-gradient(to right, #0080c0, #4080ff);
+            color: white;
+            padding: 3px 8px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-bar">CoinForge Professional v2.1 Build 1147</div>
+        
+        <h1>CoinForge Digital Currency Creator</h1>
+        <div class="subtitle">Advanced Cryptocurrency Generation System</div>
+        
+        <div class="warning">
+            WARNING: This software requires .NET Framework 2.0 and Windows Installer 3.1
+        </div>
+        
+        <div class="form-section">
+            <h3>Basic Currency Properties</h3>
+            <table>
+                <tr>
+                    <td width="120">Currency Name:</td>
+                    <td><input type="text" placeholder="MyNewCoin" style="width: 180px;"></td>
+                </tr>
+                <tr>
+                    <td>Ticker Symbol:</td>
+                    <td><input type="text" placeholder="MNC" maxlength="5" style="width: 80px;"></td>
+                </tr>
+                <tr>
+                    <td>Maximum Supply:</td>
+                    <td><input type="text" placeholder="21000000" style="width: 120px;"> units</td>
+                </tr>
+                <tr>
+                    <td>Hash Algorithm:</td>
+                    <td>
+                        <select style="width: 160px;">
+                            <option selected>SHA-256 (Bitcoin Compatible)</option>
+                            <option>Scrypt (Litecoin Compatible)</option>
+                            <option>X11 (Experimental)</option>
+                            <option>Custom Algorithm</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="form-section">
+            <h3>Network Parameters</h3>
+            <table>
+                <tr>
+                    <td width="120">Block Reward:</td>
+                    <td><input type="text" value="50.00000000" style="width: 100px;"> coins</td>
+                </tr>
+                <tr>
+                    <td>Target Block Time:</td>
+                    <td><input type="text" value="600" style="width: 60px;"> seconds</td>
+                </tr>
+                <tr>
+                    <td>Difficulty Retarget:</td>
+                    <td><input type="text" value="2016" style="width: 60px;"> blocks</td>
+                </tr>
+                <tr>
+                    <td>RPC Port:</td>
+                    <td><input type="text" value="8332" style="width: 60px;"></td>
+                </tr>
+                <tr>
+                    <td>P2P Port:</td>
+                    <td><input type="text" value="8333" style="width: 60px;"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="form-section">
+            <h3>Genesis Block Configuration</h3>
+            <table>
+                <tr>
+                    <td width="120">Genesis Text:</td>
+                    <td><input type="text" value="The Times 03/Jan/2009 Chancellor on brink" style="width: 300px;"></td>
+                </tr>
+                <tr>
+                    <td>Genesis Reward:</td>
+                    <td><input type="text" value="50.00000000" style="width: 100px;"> coins</td>
+                </tr>
+                <tr>
+                    <td>Timestamp:</td>
+                    <td><input type="text" value="1231006505" style="width: 100px;"> (Unix epoch)</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="form-section">
+            <h3>Client Customization</h3>
+            <p>Application Icon: <input type="file" accept=".ico"> (Windows ICO format only)</p>
+            <p>Splash Screen: <input type="file" accept=".bmp"> (640x480 BMP recommended)</p>
+            <p>About Text:</p>
+            <textarea rows="3" cols="65" placeholder="Enter description for your cryptocurrency client..."></textarea>
+        </div>
+        
+        <div class="requirements">
+            <strong>System Requirements:</strong><br>
+            - Microsoft Windows 2000 Professional SP4 or Windows XP SP2<br>
+            - Intel Pentium III 500MHz or AMD Athlon equivalent<br>
+            - 256 MB RAM (512 MB recommended for mining)<br>
+            - 100 MB available hard disk space<br>
+            - TCP/IP network connection<br>
+            - Microsoft Visual C++ 2005 Redistributable Package<br>
+            - DirectX 9.0c or later for hardware acceleration
+        </div>
+        
+        <div class="warning">
+            License Fee: 1.5 BTC (approximately $15.75 USD)<br>
+            Payment Address: 1CoinForgeSystemAddress123456789ABC<br>
+            Allow 6 confirmations before generation begins
+        </div>
+        
+        <center>
+            <button onclick="generateCoin()">Generate Currency Package</button>
+            <button onclick="showHelp()">Help</button>
+            <button onclick="showAbout()">About</button>
+        </center>
+        
+        <div class="status-bar">
+            Ready | Bitcoin Network: 1,247 connections | Last Block: 154,832 | Difficulty: 1,379,647.74
+        </div>
+        
+        <div class="footer">
+            CoinForge Professional Edition v2.1.1147<br>
+            Copyright 2011 Digital Currency Solutions LLC. All rights reserved.<br>
+            Licensed to: Unregistered User (Trial Version - 30 days remaining)<br>
+            For support visit http://coinforge.sourceforge.net or email support@coinforge.org<br>
+            Bitcoin implementation based on Satoshi Client v0.4.0
+        </div>
+    </div>
+
+    <script>
+        function generateCoin() {
+            alert("Error: Bitcoin payment not detected.\n\nPlease send exactly 1.50000000 BTC to the license address and wait for 6 network confirmations before attempting generation.\n\nCurrent confirmations: 0\n\nNote: Generation process may take 2-4 hours depending on network conditions.");
+        }
+        
+        function showHelp() {
+            alert("CoinForge Help System\n\nFor detailed documentation, please refer to the included CoinForge_Manual.pdf file in your installation directory.\n\nOnline help available at:\nhttp://coinforge.sourceforge.net/wiki/\n\nFor technical support:\nsupport@coinforge.org");
+        }
+        
+        function showAbout() {
+            alert("CoinForge Professional v2.1 Build 1147\n\nDigital Currency Creation System\nCopyright 2011 Digital Currency Solutions LLC\n\nThis software uses the following components:\n- OpenSSL 1.0.0d\n- Berkeley DB 4.8.30\n- Boost C++ Libraries 1.47.0\n- wxWidgets 2.9.2\n\nLicensed under the CoinForge Commercial License Agreement.\nPatent US8,765,432 pending.");
+        }
+    </script>
+</body>
+</html>
